@@ -1,6 +1,6 @@
 # Frontend Fundamentals
 
-Small projects and exercises to refresh CSS knowledge and learn vanilla JavaScript — following [The Odin Project](https://www.theodinproject.com/), with some tutorials/exercises from [MDN](https://developer.mozilla.org/en-US/) and [internetingishard](https://internetingishard.netlify.app/).
+Small projects and exercises to refresh CSS knowledge and learn vanilla JavaScript — following [**The Odin Project**](https://www.theodinproject.com/), with some tutorials/exercises from [**MDN**](https://developer.mozilla.org/en-US/) and [**internetingishard**](https://internetingishard.netlify.app/).
 
 ### JS
 
