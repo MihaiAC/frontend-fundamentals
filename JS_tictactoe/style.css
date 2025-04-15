@@ -1,46 +1,54 @@
 body {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #tictactoe {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 h1 {
-    color: white;
+  color: white;
 }
 
 .cell {
-    color: white;
+  color: white;
+  background-color: black;
 
-    min-height: 4rem;
-    min-width: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 8rem;
+  min-width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border: 2px solid white;
+  font-size: large;
+
+  border: 2px solid cadetblue;
+  box-sizing: border-box;
+}
+
+.cell:hover {
+  cursor: pointer;
 }
 
 .action-btn {
-    grid-column: 2 / 3;
-    margin-top: 1rem;
+  grid-column: 2 / 3;
+  margin-top: 1rem;
 }
 
 .rematch-btn {
-    grid-column: 2 / 3;
-    margin-top: 1rem;
-    grid-row: 6 / 7;
+  grid-column: 2 / 3;
+  margin-top: 1rem;
+  grid-row: 6 / 7;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
