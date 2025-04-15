@@ -13,7 +13,6 @@ export class DropdownMenu {
     // Initialise dropdown content and hide it initially.
     this.dropdownContent = document.createElement("div");
     this.dropdownContent.classList.add("dropdown-content");
-    this.dropdownContent.style.display = "none";
     this.dropdownDiv.appendChild(this.dropdownContent);
 
     // List holding the menu elements.
@@ -37,13 +36,15 @@ export class DropdownMenu {
   }
 
   #displayLinks() {
-    this.dropdownContent.style.display = "block";
-    this.linkElems.forEach((linkElem) => (linkElem.style.display = "block"));
+    this.dropdownContent.style.opacity = "1";
+    this.dropdownContent.style.maxHeight = "500px";
+    this.dropdownContent.style.pointerEvents = "auto";
   }
 
   #hideLinks() {
-    this.dropdownContent.style.display = "none";
-    this.linkElems.forEach((linkElem) => (linkElem.style.display = "none"));
+    this.dropdownContent.style.maxHeight = "0";
+    this.dropdownContent.style.opacity = "0";
+    this.dropdownContent.style.pointerEvents = "none";
   }
 
   setBtnText(btnText) {
@@ -55,13 +56,7 @@ export class DropdownMenu {
     linkElem.classList.add("dropdown-link");
     linkElem.href = link;
     linkElem.textContent = linkText;
-    linkElem.style.display = "none";
     this.dropdownContent.appendChild(linkElem);
-
-    linkElem.addEventListener("mouseenter", () => {
-      this.dropdownDiv.style.display = ""; // Keep dropdown visible when hovering over the new link
-    });
-
     this.linkElems.push(linkElem);
   }
 
