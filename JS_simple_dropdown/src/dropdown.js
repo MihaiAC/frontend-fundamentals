@@ -37,8 +37,8 @@ export class DropdownMenu {
   }
 
   #displayLinks() {
-    this.dropdownContent.style.display = "";
-    this.linkElems.forEach((linkElem) => (linkElem.style.display = ""));
+    this.dropdownContent.style.display = "block";
+    this.linkElems.forEach((linkElem) => (linkElem.style.display = "block"));
   }
 
   #hideLinks() {
@@ -56,7 +56,7 @@ export class DropdownMenu {
     linkElem.href = link;
     linkElem.textContent = linkText;
     linkElem.style.display = "none";
-    this.dropdownDiv.appendChild(linkElem);
+    this.dropdownContent.appendChild(linkElem);
 
     linkElem.addEventListener("mouseenter", () => {
       this.dropdownDiv.style.display = ""; // Keep dropdown visible when hovering over the new link
