@@ -1,47 +1,51 @@
-const gameboard = (function () {
-  winningConfigs = [
-    [
-      [0, 0],
-      [0, 1],
-      [0, 2],
-    ],
-    [
-      [1, 0],
-      [1, 1],
-      [1, 2],
-    ],
-    [
-      [2, 0],
-      [2, 1],
-      [2, 2],
-    ],
-    [
-      [0, 0],
-      [1, 0],
-      [2, 0],
-    ],
-    [
-      [0, 1],
-      [1, 1],
-      [2, 1],
-    ],
-    [
-      [0, 2],
-      [1, 2],
-      [2, 2],
-    ],
-    [
-      [0, 0],
-      [1, 1],
-      [2, 2],
-    ],
-    [
-      [0, 2],
-      [1, 1],
-      [2, 0],
-    ],
-  ];
+const coordsToIdx = function (x, y) {
+  return 3 * x + y;
+};
 
+winningConfigs = [
+  [
+    [0, 0],
+    [0, 1],
+    [0, 2],
+  ],
+  [
+    [1, 0],
+    [1, 1],
+    [1, 2],
+  ],
+  [
+    [2, 0],
+    [2, 1],
+    [2, 2],
+  ],
+  [
+    [0, 0],
+    [1, 0],
+    [2, 0],
+  ],
+  [
+    [0, 1],
+    [1, 1],
+    [2, 1],
+  ],
+  [
+    [0, 2],
+    [1, 2],
+    [2, 2],
+  ],
+  [
+    [0, 0],
+    [1, 1],
+    [2, 2],
+  ],
+  [
+    [0, 2],
+    [1, 1],
+    [2, 0],
+  ],
+];
+
+const gameboard = (function () {
   const newGrid = function () {
     return [
       [".", ".", "."],
@@ -72,11 +76,11 @@ const gameboard = (function () {
 
       if (isWinner) {
         console.log(configIdx);
-        return true;
+        return { isWinner: true, configIdx: configIdx };
       }
     }
 
-    return false;
+    return { isWinner: false, configIdx: null };
   };
 
   const play = (player, rowIdx, colIdx) => {
@@ -125,6 +129,7 @@ const game = (function () {
     gameboard.startNewGame();
     boardButtons.forEach((btn) => {
       btn.textContent = "";
+      btn.style.borderColor = "cadetblue";
     });
     isGameFinished = false;
     isGameStarted = false;
@@ -141,6 +146,7 @@ const game = (function () {
     gameboard.startNewGame();
     boardButtons.forEach((btn) => {
       btn.textContent = "";
+      btn.style.borderColor = "cadetblue";
     });
     isGameFinished = false;
     isGameStarted = true;
@@ -168,9 +174,17 @@ const game = (function () {
   const makeMove = function (rowIdx, colIdx) {
     let result = gameboard.play(currentPlayer, rowIdx, colIdx);
 
-    if (result) {
+    if (result.isWinner) {
       isGameFinished = true;
       alert(`${currentPlayer.name} won!`);
+
+      // Add visuals to the winning row.
+      const configIdx = result.configIdx;
+      winningConfigs[configIdx].forEach(([x, y]) => {
+        cellIdx = coordsToIdx(x, y);
+        cell = boardButtons[cellIdx];
+        cell.style.borderColor = "orange";
+      });
     } else {
       nElementsSet += 1;
       if (nElementsSet === 9) {
@@ -197,6 +211,7 @@ const game = (function () {
     }
   };
 
+  // Add visual game board cells.
   for (let rowIdx = 0; rowIdx < 3; rowIdx++) {
     for (let colIdx = 0; colIdx < 3; colIdx++) {
       let newBtn = document.createElement("div");
