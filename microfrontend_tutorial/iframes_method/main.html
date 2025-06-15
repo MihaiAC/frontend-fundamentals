@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main web app</title>
+  </head>
+  <body>
+    <h1>Main Web App</h1>
+    <iframe
+      id="search"
+      src="search.html"
+      frameborder="0"
+      style="width: 100%; height: 200px; border: 1px solid #ccc"
+    >
+    </iframe>
+
+    <script>
+      console.log("Initialising main web app");
+      const iframe = document.getElementById("search");
+
+      iframe.onload = () => {
+        iframe.contentWindow.postMessage({ type: "init", userId: 42 }, "*");
+      };
+
+      window.addEventListener("message", (event) => {
+        if (event.data?.type === "searchResult") {
+          console.log("Received result from Search App: ", event.data.payload);
+        }
+      });
+    </script>
+  </body>
+</html>
