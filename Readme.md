@@ -1,6 +1,6 @@
 # Frontend Fundamentals
 
-Small projects and exercises to refresh CSS knowledge and learn vanilla JavaScript — following [**The Odin Project**](https://www.theodinproject.com/), with some tutorials/exercises from [**MDN**](https://developer.mozilla.org/en-US/) and [**internetingishard**](https://internetingishard.netlify.app/).
+Small projects and exercises to refresh CSS knowledge and learn vanilla JavaScript - following [**The Odin Project**](https://www.theodinproject.com/), with some tutorials/exercises from [**MDN**](https://developer.mozilla.org/en-US/) and [**internetingishard**](https://internetingishard.netlify.app/).
 
 ### JS
 
@@ -17,3 +17,7 @@ Small projects and exercises to refresh CSS knowledge and learn vanilla JavaScri
 - [**CSS_landing_page**](./CSS_landing_page) – Product landing page
 - [**CSS_responsive_homepage**](./CSS_responsive_homepage) – Responsive homepage UI using Flexbox
 - [**CSS_basics**](./CSS_basics) – Flexbox, Grid, transitions, and layout exercises
+
+### Miscellaneous
+
+- [**Micro-Frontend Architecture tutorial**](./microfrontend_tutorial) - Following this freeCodeCamp [tutorial](https://www.freecodecamp.org/news/complete-micro-frontends-guide/) on micro frontends.
