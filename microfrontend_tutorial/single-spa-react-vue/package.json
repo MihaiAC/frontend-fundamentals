@@ -1,0 +1,15 @@
+{
+  "name": "single-spa-root",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm:start:*\"",
+    "start:root": "cd root-config && npm start",
+    "start:react": "cd mfe-react-button && npm start",
+    "start:vue": "cd mfe-vue-counter && npm start",
+    "start:shared": "cd mfe-shared-state && npm start",
+    "install-all": "npm install && (cd root-config && npm install) && (cd mfe-react-button && npm install) && (cd mfe-vue-counter && npm install) && (cd mfe-shared-state && npm install)"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
