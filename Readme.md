@@ -20,4 +20,4 @@ Small projects and exercises to refresh CSS knowledge and learn vanilla JavaScri
 
 ### Miscellaneous
 
-- [**Micro-Frontend Architecture tutorial**](./microfrontend_tutorial) - Following this freeCodeCamp [tutorial](https://www.freecodecamp.org/news/complete-micro-frontends-guide/) on micro frontends.
+- [**Micro-Frontend Architecture tutorial**](./microfrontend_tutorial) - Following this freeCodeCamp [tutorial](https://www.freecodecamp.org/news/complete-micro-frontends-guide/) on micro frontends. Added some simple examples for each MFE method that was presented.

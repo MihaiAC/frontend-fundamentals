@@ -1,0 +1,5 @@
+{
+  "name": "@acme/shared-logic",
+  "version": "1.0.0",
+  "main": "counter-store.js"
+}

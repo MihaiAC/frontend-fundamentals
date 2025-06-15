@@ -1,0 +1,13 @@
+{
+  "name": "mf-root",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm:start:*\"",
+    "start:host": "cd host-app && npm start",
+    "start:react": "cd react-remote-button && npm start",
+    "start:vue": "cd vue-remote-counter && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
