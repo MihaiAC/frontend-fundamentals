@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vite + React Web Component</title>
+  </head>
+  <body>
+    <h1>Shadow DOM React Button</h1>
+
+    <react-button label="Buy Now"></react-button>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      document
+        .querySelector("react-button")
+        .addEventListener("clicked", (e) =>
+          console.log("Clicked:", e.detail.label)
+        );
+    </script>
+  </body>
+</html>
