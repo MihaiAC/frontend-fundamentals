@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shell</title>
+  </head>
+  <body>
+    <h1>Shell</h1>
+    <nav>
+      <a href="http://localhost:8500">React App</a> |
+      <a href="http://localhost:8600">Vue App</a>
+    </nav>
+    <div id="spa-container"></div>
+    <div id="angular-root"></div>
+
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "root-config": "/root-config.js",
+          "react-app": "http://localhost:8500/react-app.js",
+          "vue-app": "http://localhost:8700/js/app.js"
+        }
+      }
+    </script>
+    <script>
+      System.import("root-config");
+    </script>
+  </body>
+</html>

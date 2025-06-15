@@ -1,0 +1,25 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "dev": "webpack --mode development --watch",
+    "serve": "serve dist -p 8500",
+    "start": "npm run build:dev && npm run serve"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "single-spa-react": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^9.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^5.0.0",
+    "serve": "^14.0.0"
+  }
+}
